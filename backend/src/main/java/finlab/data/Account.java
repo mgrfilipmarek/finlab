@@ -3,7 +3,7 @@ package finlab.data;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "account", schema = "finlab_db")
@@ -16,9 +16,7 @@ public class Account {
     private Long idAccount;
 
     private String description;
-    private String password;
-
-    @Column(name = "create_time")
-    private Date createTime;
+    private BigDecimal amount;
+    private Enumeration type;
 
 }

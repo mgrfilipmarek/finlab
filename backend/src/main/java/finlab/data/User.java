@@ -14,7 +14,8 @@ import java.util.Date;
 public class User {
 
     @Id
-    private String username;
+    @Column(name = "username")
+    private String userName;
     private String email;
     private String password;
 
