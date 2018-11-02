@@ -2,10 +2,7 @@ package finlab.data;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -25,10 +22,16 @@ public class Payment {
 
     private boolean income;
 
+    @ManyToOne
+    @JoinColumn(name="user")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name="account")
     private Account account;
 
+    @ManyToOne
+    @JoinColumn(name="category")
     private Enumeration category;
 
 }

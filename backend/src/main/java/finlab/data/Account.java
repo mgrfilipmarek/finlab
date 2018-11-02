@@ -13,10 +13,13 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idaccount")
-    private Long idAccount;
+    private Integer idAccount;
 
     private String description;
     private BigDecimal amount;
+
+    @ManyToOne
+    @JoinColumn(name="type")
     private Enumeration type;
 
 }

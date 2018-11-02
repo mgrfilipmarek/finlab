@@ -2,10 +2,7 @@ package finlab.data;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "enumeration", schema = "finlab_db")
@@ -18,7 +15,8 @@ public class Enumeration {
 
     private String value;
 
-    @Column(name = "enumenum")
+    @ManyToOne
+    @JoinColumn(name="enumenum")
     private EnumEnum enumEnum;
     
 }
