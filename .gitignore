@@ -26,4 +26,6 @@ hs_err_pid*
 
 /.idea/*
 backend/target/
+/frontend/src/main/frontend/dist/
 /frontend/src/main/frontend/node_modules/
+/frontend/src/main/frontend/node/
