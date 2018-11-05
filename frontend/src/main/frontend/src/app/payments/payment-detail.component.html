@@ -1,0 +1,11 @@
+<div *ngIf="payment">
+  <h2>{{payment.idPayment | uppercase}}</h2>
+
+  <div><span>id: </span>{{payment.idPayment}}</div>
+  <div>
+    <label>amount:
+      <input [(ngModel)]="payment.amount" placeholder="amount">
+    </label>
+  </div>
+  <span (click)="onDeselect()" class="removeSel">X</span>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Payment} from "../data/payment";
 
 @Component({
@@ -7,16 +7,16 @@ import {Payment} from "../data/payment";
   styleUrls: ['./payment-detail.component.css']
 })
 export class PaymentDetailComponent implements OnInit {
-  payment: Payment = {
-    amount: 15,
-    idPayment: 1,
-    income: true,
-    paymentTime: '15:30'
+  @Input() payment: Payment;
+
+  constructor() {
   }
 
-  constructor() { }
-
   ngOnInit() {
+  }
+
+  onDeselect():void {
+    this.payment = null;
   }
 
 }

@@ -1,0 +1,7 @@
+.removeSel {
+  cursor: pointer;
+  color: #800000;
+  background-color: #ff4d4d;
+  padding: .3em;
+  border-radius: 4px;
+}
