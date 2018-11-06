@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PAYMENTS} from "../mock/mock-payments";
 import {Payment} from "../data/payment";
+import {PaymentService} from "./payment.service";
 
 @Component({
   selector: 'app-payments',
@@ -8,12 +8,18 @@ import {Payment} from "../data/payment";
   styleUrls: ['./payments.component.css']
 })
 export class PaymentsComponent implements OnInit {
-  payments = PAYMENTS;
+  payments : Payment[];
   selectedPayment : Payment;
 
-  constructor() { }
+  constructor(private paymentService:PaymentService) { }
+
+  getPayments(): void {
+    this.paymentService.getPayments()
+      .subscribe(payments => this.payments = payments)
+  }
 
   ngOnInit() {
+    this.getPayments();
   }
 
   onSelect(payment:Payment):void {

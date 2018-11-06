@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { UserDetailComponent } from './user-detail/userDetail.component';
 import { PaymentDetailComponent } from './payments/payment-detail.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserDetailComponent,
     PaymentDetailComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
