@@ -7,6 +7,8 @@ import { UserDetailComponent } from './user-detail/userDetail.component';
 import { PaymentDetailComponent } from './payments/payment-detail.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { MessagesComponent } from './messages/messages.component';
     UserDetailComponent,
     PaymentDetailComponent,
     PaymentsComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
