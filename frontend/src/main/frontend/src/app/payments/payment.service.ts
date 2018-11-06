@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Payment } from '../data/payment';
 import { PAYMENTS } from '../mock/mock-payments';
@@ -10,11 +11,14 @@ import {MessageService} from "../messages/message.service";
 })
 export class PaymentService {
 
-  constructor(private messageService:MessageService) { }
+  private paymentsUrl = 'http://localhost:8080/api/payment/all';
+
+  constructor(private http : HttpClient,
+              private messageService:MessageService) { }
 
   getPayments(): Observable<Payment[]>{
-    // TODO: send the message _after_ fetching the heroes
-    this.messageService.add('HeroService: fetched heroes');
-    return of(PAYMENTS);
+    // this.messageService.add('HeroService: fetched heroes');
+    // return of(PAYMENTS);
+    return this.http.get<Payment[]>(this.paymentsUrl);
   }
 }
