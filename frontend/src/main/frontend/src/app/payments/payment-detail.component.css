@@ -1,7 +1,14 @@
-.removeSel {
-  cursor: pointer;
-  color: #800000;
+span.clear {
+  font-family: Arial;
   background-color: #ff4d4d;
-  padding: .3em;
+  border: none;
+  padding: 5px 10px;
   border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  color: #800000;
+  margin-bottom: 12px;
+}
+span.clear:hover {
+  background-color: #ff1a1a;
 }
