@@ -3,7 +3,6 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Payment } from '../data/payment';
-import { PAYMENTS } from '../mock/mock-payments';
 import {MessageService} from "../messages/message.service";
 
 @Injectable({
@@ -11,7 +10,7 @@ import {MessageService} from "../messages/message.service";
 })
 export class PaymentService {
 
-  private paymentsUrl = 'http://localhost:8080/api/payment/all';
+  private paymentsUrl = 'http://localhost:8080/finlab/api/payment/all';
 
   constructor(private http : HttpClient,
               private messageService:MessageService) { }

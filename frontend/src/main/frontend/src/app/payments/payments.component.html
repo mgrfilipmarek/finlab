@@ -3,7 +3,7 @@
   <li *ngFor="let payment of payments"
       (click)="onSelect(payment)"
       [class.selected]="payment === selectedPayment">
-    <span class="badge">id:{{payment.idPayment}}</span>{{payment.amount}}&euro; at {{payment.paymentTime}}
+    <span class="badge">id:{{payment.idPayment}}</span>{{payment.amount}}&euro; at {{payment.paymentTime}} by {{payment.user.userName}}
   </li>
 </ul>
 <app-payment-detail [payment]="selectedPayment"></app-payment-detail>
