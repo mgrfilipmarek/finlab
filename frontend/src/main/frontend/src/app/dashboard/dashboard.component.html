@@ -1,5 +1,6 @@
-<p>
-  dashboard works!
-</p>
-<button type="button" class="btn btn-primary" tooltip="asdf">Button with tooltip</button>
-<userDetail></userDetail>
+<app-menu></app-menu>
+<section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
+  <userDetail></userDetail>
+  <!--<router-outlet></router-outlet>-->
+</section>
+

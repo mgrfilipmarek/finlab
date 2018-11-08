@@ -5778,7 +5778,9 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .nav {
   padding-left: 0;
-  margin-bottom: 0
+  margin-bottom: 0;
+  /*display: block;*/
+  /* problem with FLEX - fixed in menu.comp.css*/
 }
 
 .nav-link:focus, .nav-link:hover {
