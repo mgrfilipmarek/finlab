@@ -11,6 +11,7 @@ import { PaymentsComponent } from './payments/payments.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     PaymentDetailComponent,
     PaymentsComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
