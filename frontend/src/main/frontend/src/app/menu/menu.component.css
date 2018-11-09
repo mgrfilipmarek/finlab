@@ -4,3 +4,6 @@
 .nav li:hover{
   background-color: #1f7e9a;
 }
+.nav li.nested li:hover {
+  background-color: #2aabd2;
+}
