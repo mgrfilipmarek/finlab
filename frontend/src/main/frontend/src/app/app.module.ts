@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { TotalBilanceComponent } from './component/total-bilance/total-bilance.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MenuComponent } from './menu/menu.component';
     MessagesComponent,
     DashboardComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    TotalBilanceComponent
   ],
   imports: [
     BrowserModule,
