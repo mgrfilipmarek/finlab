@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule} from "@angular/common/http";
 import { TooltipModule} from "ngx-bootstrap";
+import { ChartModule } from "angular-highcharts";
 
 import { AppComponent } from './app.component';
 import { UserDetailComponent } from './user-detail/userDetail.component';
@@ -32,6 +33,7 @@ import { TotalBilanceComponent } from './component/total-bilance/total-bilance.c
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ChartModule,
     TooltipModule.forRoot()
   ],
   providers: [],
