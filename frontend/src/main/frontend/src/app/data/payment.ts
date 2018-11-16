@@ -1,4 +1,5 @@
 import {User} from "./user";
+import {Enumeration} from "./enumeration";
 
 export class Payment {
   idPayment: number;
@@ -6,4 +7,5 @@ export class Payment {
   paymentTime: string;
   income: boolean;
   user:User;
+  category:Enumeration;
 }

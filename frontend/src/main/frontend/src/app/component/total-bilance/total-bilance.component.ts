@@ -40,7 +40,7 @@ export class TotalBilanceComponent implements OnInit {
               text: '2018'
             },
             tooltip: {
-              pointFormat: '<b>{point.percentage:.1f}%</b>'
+              pointFormat: '<b>{point.y}€</b> ({point.percentage:.1f}%)'
             },
             plotOptions: {
               pie: {
