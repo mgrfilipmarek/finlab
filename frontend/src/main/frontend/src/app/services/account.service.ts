@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {MessageService} from "../messages/message.service";
 import {Observable} from "rxjs";
-import {Payment} from "../data/payment";
+import {Account} from "../data/account";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  private paymentsUrl = 'http://localhost:8080/finlab/api/account/all';
+  private accountUrl = 'http://localhost:8080/finlab/api/account';
 
-  constructor(private http : HttpClient,
-              private messageService:MessageService) { }
+  constructor(private http : HttpClient) { }
 
-  getPayments(): Observable<Payment[]>{
-    // this.messageService.add('HeroService: fetched heroes');
-    // return of(PAYMENTS);
-    return this.http.get<Payment[]>(this.paymentsUrl);
+  getAccountAll(): Observable<Account[]>{
+    // return of(Account);
+    return this.http.get<Account[]>(this.accountUrl + "/all");
   }
 }
