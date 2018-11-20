@@ -6,8 +6,6 @@ import { TooltipModule} from "ngx-bootstrap";
 import { ChartModule } from "angular-highcharts";
 
 import { AppComponent } from './app.component';
-import { UserDetailComponent } from './user-detail/userDetail.component';
-import { PaymentDetailComponent } from './payments/payment-detail.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,8 +18,6 @@ import { PaymentBilanceComponent} from "./component/payment-bilance/payment-bila
 @NgModule({
   declarations: [
     AppComponent,
-    UserDetailComponent,
-    PaymentDetailComponent,
     PaymentsComponent,
     MessagesComponent,
     DashboardComponent,
