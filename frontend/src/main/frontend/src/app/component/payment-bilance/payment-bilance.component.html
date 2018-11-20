@@ -7,14 +7,16 @@
         <div class="col-lg-12">
               <ul class="list-group">
                 <li *ngFor="let payment of payments" class="list-group-item list-group-item-heading d-flex justify-content-between lh-condensed">
+                  <!--<div>
+                    <i class="fas fa-utensils"></i>
+                  </div>-->
                   <div [ngClass]="(payment.income)?'text-success':'text-danger'">
                     <h6 class="my-0">{{payment.category.value}}</h6>
                     <small class="text-muted">
                       {{payment.user.userName}} ({{payment.account.type.value}} - {{payment.account.description}})
                     </small>
-
                   </div>
-                  <span class="text-muted" [ngClass]="(payment.income)?'text-success':'text-danger'">
+                  <span [ngClass]="(payment.income)?'success':'danger'">
                     <b><span *ngIf="!payment.income">-</span>{{payment.amount}}&euro;</b>
                   </span>
                 </li>
