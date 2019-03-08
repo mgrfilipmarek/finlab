@@ -29,15 +29,10 @@ export class TotalBilanceComponent implements OnInit, OnDestroy {
   }
 
   initGraph(data: Account[]):void {
-    let chartData = [];
-    // data.forEach((value) =>
-      //   chartData.push([value.description + " (" + value.type.value + ")", value.amount]));
-
-    chartData = data.map(value => [
+    let chartData = data.map(value => [
       value.description + " (" + value.type.value + ")",
       value.amount
     ]);
-    // chartData = data.map(value => [value.description + " (" + value.type.value + ")", value.amount]);
 
     this.chart = this.accountService.totalBilanceChart(chartData);
   }
