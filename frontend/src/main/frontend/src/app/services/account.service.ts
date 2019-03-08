@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Account} from "../data/account";
+import {Chart} from "angular-highcharts";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,39 @@ export class AccountService {
   constructor(private http : HttpClient) { }
 
   getAccountAll(): Observable<Account[]>{
-    // return of(Account);
     return this.http.get<Account[]>(this.accountUrl + "/all");
+  }
+
+  totalBilanceChart(chartData: any[]): Chart {
+    return new Chart({
+      chart: {
+        type: 'pie'
+      },
+      credits: {
+        enabled: false
+      },
+      title: {
+        text: '2018'
+      },
+      tooltip: {
+        pointFormat: '<b>{point.y}€</b> ({point.percentage:.1f}%)'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: false
+          },
+          showInLegend: true
+        }
+      },
+      series: [{
+        type: 'pie',
+        name: 'Podiel',
+        innerSize: '60%',
+        data: chartData
+      }]
+    });
   }
 }
