@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from "../data/user";
 
 @Component({
   selector: 'app-menu',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+
   showMenu: string = '';
+  loggedUser: User;
 
   constructor() { }
 
   ngOnInit() {
+    this.loggedUser = JSON.parse(localStorage.getItem("currentUser"));
   }
 
   addExpandClass(element: any) {
