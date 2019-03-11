@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { TotalBilanceComponent } from './component/total-bilance/total-bilance.component';
 import { PaymentBilanceComponent} from "./component/payment-bilance/payment-bilance.component";
+import { PaymentDetailComponent } from './component/payment-detail/payment-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PaymentBilanceComponent} from "./component/payment-bilance/payment-bila
     LoginComponent,
     MenuComponent,
     TotalBilanceComponent,
-    PaymentBilanceComponent
+    PaymentBilanceComponent,
+    PaymentDetailComponent
   ],
   imports: [
     BrowserModule,
