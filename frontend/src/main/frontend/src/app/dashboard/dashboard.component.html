@@ -5,7 +5,8 @@
     <div class="animate">
       <div class="row">
         <app-total-bilance></app-total-bilance>
-        <app-payment-bilance></app-payment-bilance>
+        <app-payment-bilance (paymentDetailEvent)="receiveMessage($event)"></app-payment-bilance> <!--(onSelect)="setSelected($event)"-->
+        <app-payment-detail [childPayment]="selectedPayment"></app-payment-detail> <!--[(selected)]="selected"-->
       </div>
 
       <div class="row">

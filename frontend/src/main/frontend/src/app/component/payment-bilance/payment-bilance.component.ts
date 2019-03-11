@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {Payment} from "../../data/payment";
 import {PaymentService} from "../../services/payment.service";
 
@@ -10,9 +10,10 @@ import {PaymentService} from "../../services/payment.service";
 export class PaymentBilanceComponent implements OnInit {
 
   payments : Payment[];
-  selectedPayment : Payment;
 
   constructor(private paymentService:PaymentService) { }
+
+  @Output() paymentDetailEvent = new EventEmitter<Payment>();
 
   getPayments(): void {
     this.paymentService.getPayments()
@@ -21,6 +22,11 @@ export class PaymentBilanceComponent implements OnInit {
 
   ngOnInit() {
     this.getPayments();
+  }
+
+  showDetail(payment: Payment):void {
+    console.log("payment child click")
+    this.paymentDetailEvent.emit(payment);
   }
 
 }

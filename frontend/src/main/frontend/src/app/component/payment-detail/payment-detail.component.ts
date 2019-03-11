@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Payment} from "../../data/payment";
 
 @Component({
@@ -8,12 +8,15 @@ import {Payment} from "../../data/payment";
 })
 export class PaymentDetailComponent implements OnInit {
 
-  payment: Payment;
+  @Input() childPayment: Payment;
 
   constructor() { }
 
   ngOnInit() {
-    this.payment = null;
+  }
+
+  hideDetail():void {
+    this.childPayment = null;
   }
 
 }
