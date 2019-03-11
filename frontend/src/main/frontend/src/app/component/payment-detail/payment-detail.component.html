@@ -1,0 +1,20 @@
+<div class="col-md-12 col-lg-4">
+  <div class="card">
+    <div class="card-header card-primary card-inverse">
+      <span class="card-title"><i class="fas fa-wallet"></i>&nbsp;&nbsp;Celkové vlastné prostriedky</span>
+    </div>
+    <div class="card-block">
+      <div>bla bla bla</div>
+
+      <div *ngIf="payment" [ngClass]="(payment.income)?'text-success':'text-danger'">
+        <h6 class="my-0">{{payment.category.value}}</h6>
+        <small class="text-muted">
+          {{payment.user.userName}} ({{payment.account.type.value}} - {{payment.account.description}})
+        </small>
+      </div>
+     <!-- <span [ngClass]="(payment.income)?'success':'danger'">
+        <b><span *ngIf="!payment.income">-</span>{{payment.amount}}&euro;</b>
+      </span>-->
+    </div>
+  </div>
+</div>
