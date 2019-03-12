@@ -10,6 +10,7 @@ import {PaymentService} from "../../services/payment.service";
 export class PaymentBilanceComponent implements OnInit {
 
   payments : Payment[];
+  selectedPayment: Payment;
 
   constructor(private paymentService:PaymentService) { }
 
@@ -25,7 +26,7 @@ export class PaymentBilanceComponent implements OnInit {
   }
 
   showDetail(payment: Payment):void {
-    console.log("payment child click")
+    this.selectedPayment = payment;
     this.paymentDetailEvent.emit(payment);
   }
 
