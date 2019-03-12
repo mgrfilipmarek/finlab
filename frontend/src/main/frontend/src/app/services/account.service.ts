@@ -17,6 +17,10 @@ export class AccountService {
     return this.http.get<Account[]>(this.accountUrl + "/all");
   }
 
+  addAccount(account: Account): Observable<boolean> {
+    return this.http.post<boolean>(this.accountUrl, account);
+  }
+
   totalBilanceChart(chartData: any[]): Chart {
     return new Chart({
       chart: {
