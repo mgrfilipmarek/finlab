@@ -3,17 +3,24 @@
     <div class="col-lg-4 col-lg-offset-4">
       <img src="assets/images/flat-avatar.png" class="user-avatar" />
       <h1>Finance Bilance <small>Free Edition</small></h1>
-      <form role="form">
+
+      <form name="loginForm" (ngSubmit)="f.form.valid && login()" #f="ngForm" >
         <div class="form-content">
           <div class="form-group">
-            <input type="text" class="form-control input-underline input-lg" id="" placeholder="Email">
+            <input type="text" class="form-control input-underline input-lg"
+                   [(ngModel)]="model.userName" name="userName"
+                   id="userName" placeholder="Name" required>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control input-underline input-lg" id="" placeholder="Password">
+            <input type="password" class="form-control input-underline input-lg"
+                   [(ngModel)]="model.password" name="password"
+                   id="password" placeholder="Password">
           </div>
         </div>
         <a class="btn rounded-btn" routerLink="/dashboard">Log in</a>
+        <button  class="btn rounded-btn">Login with DB call</button>
       </form>
+
     </div>
   </div>
 </div>
