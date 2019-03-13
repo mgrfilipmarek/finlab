@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Payment} from "../data/payment";
-import {PaymentService} from "../services/payment.service";
+import {Account} from "../data/account";
+import {AccountService} from "../services/account.service";
+import {Enumeration} from "../data/enumeration";
+import {EnumerationService} from "../services/enumeration.service";
 
 @Component({
   selector: 'app-payments',
@@ -8,22 +10,28 @@ import {PaymentService} from "../services/payment.service";
   styleUrls: ['./payments.component.css']
 })
 export class PaymentsComponent implements OnInit {
-  payments : Payment[];
-  selectedPayment : Payment;
 
-  constructor(private paymentService:PaymentService) { }
+  model : Account = new Account();
+  types:Enumeration[];
 
-  getPayments(): void {
-    this.paymentService.getPayments()
-      .subscribe(payments => this.payments = payments)
+  constructor(private accountService: AccountService, private enumerationService:EnumerationService) { }
+
+  getTypes(): void {
+    this.enumerationService.getEnumerationAll(1)
+      .subscribe(types => this.types = types)
   }
 
   ngOnInit() {
-    this.getPayments();
+    this.getTypes();
   }
 
-  onSelect(payment:Payment):void {
-    this.selectedPayment = payment;
+  onSubmit() {
+    console.log(this.model);
+
+    this.accountService.addAccount(this.model)
+      .subscribe((result:boolean) => {
+        console.log(result)
+      });
   }
 
 
