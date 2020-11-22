@@ -30,7 +30,7 @@ export class AccountService {
         enabled: false
       },
       title: {
-        text: '2018'
+        text: '2020'
       },
       tooltip: {
         pointFormat: '<b>{point.y}€</b> ({point.percentage:.1f}%)'
